@@ -1,0 +1,58 @@
+{
+  "llm": {
+    "provider": "deepseek",
+    "api_key": "sk-xxxxxxxx",
+    "api_base": "https://api.deepseek.com/v1",
+    "model": "deepseek-chat",
+    "temperature": 0.3,
+    "max_tokens": 500
+  },
+  "categories": [
+    {
+      "path": "2. 领域/01.个人成长",
+      "subcategories": ["习惯养成", "时间管理", "目标设定"]
+    },
+    {
+      "path": "2. 领域/02.健康与生活",
+      "subcategories": ["家庭与关系", "心理健康", "身体健康"]
+    },
+    {
+      "path": "2. 领域/03.职业发展",
+      "subcategories": ["人脉与网络", "工作技能", "职业规划"]
+    },
+    {
+      "path": "2. 领域/04.财务管理",
+      "subcategories": ["投资策略", "收入与支出", "财务目标"]
+    },
+    {
+      "path": "2. 领域/05.学习与知识",
+      "subcategories": ["在线课程", "知识整理", "阅读笔记", "数学知识"]
+    },
+    {
+      "path": "2. 领域/06.技术与工具",
+      "subcategories": ["技术学习", "数字工作流", "软件工具", "源码学习"]
+    },
+    {
+      "path": "2. 领域/07.世界与探索",
+      "subcategories": ["文化观察", "旅行规划", "社会议题"]
+    },
+    {
+      "path": "2. 领域/10.大模型",
+      "subcategories": ["大脑科学", "安全与伦理", "应用实践", "框架工具", "模型原理", "行业案例"]
+    },
+    {
+      "path": "2. 领域/11.女儿",
+      "subcategories": ["教育与成长", "相处记录", "兴趣与发展", "回忆与照片", "给她的话"]
+    },
+    {
+      "path": "3. 资源/08.参考资料",
+      "subcategories": ["数据与图表", "模板与格式", "素材与图库"]
+    },
+    {
+      "path": "3. 资源/09.灵感与收藏",
+      "subcategories": ["引言与语录", "创意点子", "趣味链接"]
+    }
+  ],
+  "default_path": "0. 未分类"
+}
+
