@@ -6,9 +6,6 @@ import os
 from pathlib import Path
 from openai import OpenAI
 
-# 添加默认配置路径常量
-DEFAULT_CONFIG_PATH = "../auto-catalog.json"
-
 # 向上级目录查找.vault标识（假设仓库根目录有特殊文件）
 def find_vault_root(start_path):
     current = start_path
@@ -82,15 +79,12 @@ class FileOrganizer:
 
     def find_default_config(self):
         """查找默认配置文件"""
-        search_paths = [
-            DEFAULT_CONFIG_PATH,
-            "auto-catalog.json",
-            "config.json"
-        ]
         
-        for path in search_paths:
-            if os.path.exists(path):
-                return path
+        vault_root = find_vault_root(os.path.dirname(os.path.abspath(__file__)))
+        config_path = os.path.join(vault_root, ".obsidian", "auto-catalog.json")
+        if os.path.exists(config_path):
+            return config_path
+  
         raise FileNotFoundError("未找到任何配置文件")
 
     def analyze_content(self, text):
@@ -149,7 +143,7 @@ def main():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument("files", nargs="+", help="需要处理的文件路径")
-    parser.add_argument("--config", default=DEFAULT_CONFIG_PATH,
+    parser.add_argument("--config", 
                        help="指定配置文件路径")
     parser.add_argument("--dry-run", action="store_true",
                       help="仅显示预测结果不执行移动")
